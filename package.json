@@ -1,0 +1,16 @@
+{
+  "name": "root",
+  "private": true,
+  "scripts": {
+    "dev": "lerna run dev --stream --scope",
+    "alias:nano": "moleculer alias-template nano-service ./packages/nano-service-template",
+    "init:nano": "moleculer init nano-service"
+  },
+  "workspaces": [
+    "packages/@types/*",
+    "@services/*"
+  ],
+  "devDependencies": {
+    "lerna": "^3.13.2"
+  }
+}

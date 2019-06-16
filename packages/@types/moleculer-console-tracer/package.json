@@ -1,0 +1,6 @@
+{
+  "name": "@types/moleculer-console-tracer",
+  "version": "1.0.0",
+  "main": "",
+  "types": "index"
+}
