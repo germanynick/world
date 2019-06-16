@@ -9,11 +9,16 @@
     "ci": "jest --watch",
     "test": "jest --coverage",
     "lint": "tslint -p tsconfig.json",
-    "docgen": "node ../../node_modules/moleculer-docgen dist/service.js"
+    "docgen": "node ../../node_modules/moleculer-docgen dist/service.js",
+    "prepublishOnly": "yarn build && yarn docgen"
   },
   "keywords": [
     "microservices",
     "moleculer"
+  ],
+  "main": "dist/service.js",
+  "files": [
+    "dist"
   ],
   "author": "",
   "devDependencies": {

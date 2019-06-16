@@ -12,7 +12,8 @@
       {{/jest}}
       "node"
     ],
-    "sourceMap": true,
+    "declaration": true,
+    "sourceMap": false,
     "target": "es6",
     "baseUrl": "./",
     
