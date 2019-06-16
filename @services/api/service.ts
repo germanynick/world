@@ -10,7 +10,10 @@ import ApiGateway = require("moleculer-web");
     routes: [
       {
         path: "/api",
-        whitelist: ["**"],
+        mappingPolicy: "restrict",
+        aliases: {
+          "GET layouts": "layout.find",
+        },
       },
     ],
   },

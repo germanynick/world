@@ -5,10 +5,11 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node ../../node_modules/moleculer/bin/moleculer-runner.js --hot --config moleculer.config.ts service.ts",
-    "start": "moleculer-runner service.js",
+    "start": "moleculer-runner dist/service.js",
     "ci": "jest --watch",
     "test": "jest --coverage",
-    "lint": "tslint -p tsconfig.json"
+    "lint": "tslint -p tsconfig.json",
+    "docgen": "node ../../node_modules/moleculer-docgen dist/service.js"
   },
   "keywords": [
     "microservices",

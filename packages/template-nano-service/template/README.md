@@ -1,4 +1,4 @@
-# {{projectName}} Service for the Moleculer framework
+# {{projectName}} [![NPM version](https://img.shields.io/npm/v/{{projectName}}.svg)](https://www.npmjs.com/package/{{projectName}})
 
 ## Features
 
@@ -6,12 +6,17 @@
 
 ## Usage
 
+{{{{raw}}}}
+
 ## Settings
 
 <!-- AUTO-CONTENT-START:SETTINGS -->
+
 | Property | Type | Default | Description |
 | -------- | ---- | ------- | ----------- |
-*No settings.*
+
+
+_No settings._
 
 <!-- AUTO-CONTENT-END:SETTINGS -->
 
@@ -30,20 +35,20 @@
 ## Actions
 
 <!-- AUTO-CONTENT-START:ACTIONS -->
-## `hello` 
+
+## `hello`
 
 Hello Action
 
 ### Parameters
-| Property | Type | Default | Description |
-| -------- | ---- | ------- | ----------- |
-| `name` | `string` | **required** | Personal name |
+
+| Property | Type     | Default      | Description   |
+| -------- | -------- | ------------ | ------------- |
+| `name`   | `string` | **required** | Personal name |
 
 ### Results
+
 **Type:** `string`
-
-
-
 
 <!-- AUTO-CONTENT-END:ACTIONS -->
 
@@ -120,9 +125,10 @@ _<sup>Since: {{this}}</sup>_
 {{this}}
 {{/each}}
 {{/hasExamples}}
-
 {{/each}}
 -->
+
+{{{{/raw}}}}
 
 ## Test
 
