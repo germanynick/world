@@ -2,9 +2,9 @@ import { Service } from "moleculer";
 import { action, param, service } from "moleculer-service-decorators";
 
 @service({
-  name: "greeter",
+  name: "{{serviceName}}",
 })
-class GreeterService extends Service {
+class {{capitalize (serviceName)}}Service extends Service {
   /**
    *  Hello Action
    *
@@ -14,7 +14,7 @@ class GreeterService extends Service {
    *
    * @returns {string}
    *
-   * @memberof GreeterService
+   * @memberof {{capitalize (serviceName)}}Service
    */
 
   @action()
@@ -23,4 +23,4 @@ class GreeterService extends Service {
   }
 }
 
-export = GreeterService;
+export = {{capitalize (serviceName)}}Service;

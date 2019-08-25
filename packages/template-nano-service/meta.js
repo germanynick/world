@@ -16,7 +16,7 @@ module.exports = function(values) {
           { name: "NATS Streaming", value: "STAN" },
           { name: "Kafka", value: "Kafka" }
         ],
-        default: "TCP"
+        default: "NATS"
       },
       {
         type: "confirm",
@@ -47,7 +47,7 @@ module.exports = function(values) {
         type: "confirm",
         name: "jest",
         message: "Setup unit tests with Jest?",
-        default: true
+        default: false
       }
     ],
 
@@ -63,7 +63,24 @@ module.exports = function(values) {
     },
 
     helpers: {
-      raw: options => options.fn()
+      raw: options => options.fn(),
+      capitalize: text =>
+        text
+          .replace(/-/g, " ")
+          .replace(
+            /\w\S*/g,
+            txt => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+          )
+          .replace(" ", ""),
+      serviceName: options => {
+        const {
+          data: {
+            root: { projectName }
+          }
+        } = options;
+
+        return projectName.replace(/^.*\//, "");
+      }
     },
 
     filters: {
@@ -77,8 +94,7 @@ module.exports = function(values) {
     completeMessage: `
 To get started:
 
-	cd {{projectName}}
-	yarn dev
+	yarn dev {{projectName}}
 
 		`
   };
