@@ -1,7 +1,5 @@
-import * as path from 'path'
 import { ServiceBroker } from 'moleculer'
 import * as ApiGateway from 'moleculer-web'
-import { Request } from 'express'
 
 const broker = new ServiceBroker({
   logger: true,
