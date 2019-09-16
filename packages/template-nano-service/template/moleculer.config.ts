@@ -3,7 +3,7 @@ import { BrokerOptions, Errors, ServiceBroker } from "moleculer";
 
 // More info about options: https://moleculer.services/docs/0.13/broker.html#Broker-options
 const brokerConfig: BrokerOptions = {
-	namespace: "",
+	namespace: "{{namespace}}",
 
 	logger: true,
 	logLevel: "info",

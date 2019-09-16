@@ -79,7 +79,28 @@ module.exports = function(values) {
           }
         } = options;
 
-        return projectName.replace(/^.*\//, "");
+        const fullName = projectName.replace(/^.*\//, "");
+        const matches = /^((?<namespace>[^-]+)?-)?(?<serviceName>\S+)$/.exec(
+          fullName
+        );
+
+        const { serviceName } = matches.groups;
+        return serviceName;
+      },
+      namespace: options => {
+        const {
+          data: {
+            root: { projectName }
+          }
+        } = options;
+
+        const fullName = projectName.replace(/^.*\//, "");
+        const matches = /^((?<namespace>[^-]+)?-)?(?<serviceName>\S+)$/.exec(
+          fullName
+        );
+
+        const { namespace } = matches.groups;
+        return namespace;
       }
     },
 
