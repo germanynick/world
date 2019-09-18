@@ -1,5 +1,5 @@
 {
-  "name": "root",
+  "name": "world",
   "private": true,
   "scripts": {
     "dev": "lerna run dev --stream --scope",
@@ -11,7 +11,7 @@
   },
   "workspaces": [
     "packages/@types/*",
-    "@services/*"
+    "@*/*"
   ],
   "devDependencies": {
     "lerna": "^3.13.2",
