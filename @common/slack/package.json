@@ -1,0 +1,39 @@
+{
+  "name": "@common/slack",
+  "version": "1.0.0",
+  "description": "My Moleculer microservice",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node ../../node_modules/moleculer/bin/moleculer-runner.js --env --hot --repl --config moleculer.config.ts service.ts",
+    "start": "moleculer-runner --config dist/moleculer.config.js dist/service.js",
+    "lint": "tslint -p tsconfig.json",
+    "docgen": "node ../../node_modules/moleculer-docgen dist/service.js",
+    "prepublishOnly": "yarn build && yarn docgen"
+  },
+  "keywords": [
+    "microservices",
+    "moleculer"
+  ],
+  "main": "dist/service.js",
+  "files": [
+    "dist"
+  ],
+  "author": "",
+  "devDependencies": {
+    "@types/bluebird": "^3.5.23",
+    "@types/node": "^10.9.2",
+    "tslint": "^5.11.0",
+    "moleculer-repl": "^0.5.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.0.1"
+  },
+  "dependencies": {
+    "nats": "^1.0.0",
+    "moleculer": "^0.13.0",
+    "moleculer-slack": "1.1.1",
+    "moleculer-service-decorators": "^1.0.4"
+  },
+  "engines": {
+    "node": ">= 8.x.x"
+  }
+}
