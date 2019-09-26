@@ -1,35 +1,133 @@
-# api
+# @common/api [![NPM version](https://img.shields.io/npm/v/@common/api.svg)](https://www.npmjs.com/package/@common/api)
 
-## Build Setup
+## Features
 
-``` bash
-# Install dependencies
-npm install
+## Install
 
-# Start developing with REPL
-npm run dev
+## Usage
 
-# Start production
-npm start
 
-# Run unit tests
-npm test
+## Settings
 
-# Run continuous test mode
-npm run ci
+<!-- AUTO-CONTENT-START:SETTINGS -->
 
-# Run TSLint
-npm run lint
-```
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
 
-## Run in Docker
 
-**Build Docker image**
-```bash
-$ docker build -t api .
-```
+_No settings._
 
-**Start container**
-```bash
-$ docker run -d api
-```
+<!-- AUTO-CONTENT-END:SETTINGS -->
+
+<!-- AUTO-CONTENT-TEMPLATE:SETTINGS
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+{{#each this}}
+| `{{name}}` | {{type}} | {{defaultValue}} | {{description}} |
+{{/each}}
+{{^this}}
+*No settings.*
+{{/this}}
+
+-->
+
+## Actions
+
+<!-- AUTO-CONTENT-START:ACTIONS -->
+
+## `hello`
+
+Hello Action
+
+### Parameters
+
+| Property | Type     | Default      | Description   |
+| -------- | -------- | ------------ | ------------- |
+| `name`   | `string` | **required** | Personal name |
+
+### Results
+
+**Type:** `string`
+
+<!-- AUTO-CONTENT-END:ACTIONS -->
+
+<!-- AUTO-CONTENT-TEMPLATE:ACTIONS
+{{#each this}}
+## `{{name}}` {{#each badges}}{{this}} {{/each}}
+{{#since}}
+_<sup>Since: {{this}}</sup>_
+{{/since}}
+
+{{description}}
+
+### Parameters
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+{{#each params}}
+| `{{name}}` | {{type}} | {{defaultValue}} | {{description}} |
+{{/each}}
+{{^params}}
+*No input parameters.*
+{{/params}}
+
+{{#returns}}
+### Results
+**Type:** {{type}}
+
+{{description}}
+{{/returns}}
+
+{{#hasExamples}}
+### Examples
+{{#each examples}}
+{{this}}
+{{/each}}
+{{/hasExamples}}
+
+{{/each}}
+-->
+
+# Methods
+
+<!-- AUTO-CONTENT-START:METHODS -->
+<!-- AUTO-CONTENT-END:METHODS -->
+
+<!-- AUTO-CONTENT-TEMPLATE:METHODS
+{{#each this}}
+## `{{name}}` {{#each badges}}{{this}} {{/each}}
+{{#since}}
+_<sup>Since: {{this}}</sup>_
+{{/since}}
+
+{{description}}
+
+### Parameters
+| Property | Type | Default | Description |
+| -------- | ---- | ------- | ----------- |
+{{#each params}}
+| `{{name}}` | {{type}} | {{defaultValue}} | {{description}} |
+{{/each}}
+{{^params}}
+*No input parameters.*
+{{/params}}
+
+{{#returns}}
+### Results
+**Type:** {{type}}
+
+{{description}}
+{{/returns}}
+
+{{#hasExamples}}
+### Examples
+{{#each examples}}
+{{this}}
+{{/each}}
+{{/hasExamples}}
+{{/each}}
+-->
+
+
+## Test
+
+## License

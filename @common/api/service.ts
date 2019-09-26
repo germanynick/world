@@ -1,10 +1,10 @@
 import { Service } from "moleculer";
 import { service } from "moleculer-service-decorators";
-import ApiGateway = require("moleculer-web");
+import MoleculerWeb from "moleculer-web";
 
 @service({
   name: "api",
-  mixins: [ApiGateway],
+  mixins: [MoleculerWeb],
   settings: {
     port: process.env.PORT || 9000,
     routes: [
