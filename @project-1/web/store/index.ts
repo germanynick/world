@@ -1,16 +1,16 @@
 import { MutationTree, ActionTree } from 'vuex'
 
-export interface AppState {
+export interface IAppState {
   token?: string
 }
 
-export const state = (): AppState => ({})
+export const state = (): IAppState => ({})
 
-export const mutations: MutationTree<AppState> = {
+export const mutations: MutationTree<IAppState> = {
   setToken: (state, token) => (state.token = token)
 }
 
-export const actions: ActionTree<AppState, any> = {
+export const actions: ActionTree<IAppState, any> = {
   async nuxtServerInit({ commit }) {
     commit('setToken', 'Duc')
   }
