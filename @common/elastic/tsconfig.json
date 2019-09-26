@@ -16,5 +16,5 @@
     "emitDecoratorMetadata": true,
     "plugins": [{ "transform": "ts-transformer-json-schema/transformer" }]
   },
-  "exclude": ["node_modules", "test"]
+  "exclude": ["node_modules", "test", "dist"]
 }

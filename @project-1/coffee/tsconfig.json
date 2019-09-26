@@ -6,9 +6,7 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "pretty": true,
-    "types": [
-      "node"
-    ],
+    "types": ["node"],
     "declaration": true,
     "sourceMap": false,
     "target": "es6",
@@ -17,8 +15,5 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "exclude": [
-    "node_modules",
-    "test"
-  ]
+  "exclude": ["node_modules", "test", "dist"]
 }
