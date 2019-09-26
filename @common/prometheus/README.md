@@ -10,12 +10,9 @@
 ## Settings
 
 <!-- AUTO-CONTENT-START:SETTINGS -->
-
 | Property | Type | Default | Description |
 | -------- | ---- | ------- | ----------- |
-
-
-_No settings._
+*No settings.*
 
 <!-- AUTO-CONTENT-END:SETTINGS -->
 
@@ -34,21 +31,6 @@ _No settings._
 ## Actions
 
 <!-- AUTO-CONTENT-START:ACTIONS -->
-
-## `hello`
-
-Hello Action
-
-### Parameters
-
-| Property | Type     | Default      | Description   |
-| -------- | -------- | ------------ | ------------- |
-| `name`   | `string` | **required** | Personal name |
-
-### Results
-
-**Type:** `string`
-
 <!-- AUTO-CONTENT-END:ACTIONS -->
 
 <!-- AUTO-CONTENT-TEMPLATE:ACTIONS
