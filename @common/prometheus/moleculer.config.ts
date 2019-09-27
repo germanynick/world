@@ -3,70 +3,63 @@ import { BrokerOptions, Errors, ServiceBroker } from "moleculer";
 
 // More info about options: https://moleculer.services/docs/0.13/broker.html#Broker-options
 const brokerConfig: BrokerOptions = {
-	namespace: "",
+  namespace: "",
 
-	logger: true,
-	logLevel: "info",
-	logFormatter: "default",
+  logger: true,
+  logLevel: "info",
+  logFormatter: "default",
 
-	transporter: "NATS",
+  transporter: "NATS",
 
-	cacher: "Memory",
+  cacher: "Memory",
 
-	serializer: "JSON",
+  serializer: "JSON",
 
-	requestTimeout: 10 * 1000,
+  requestTimeout: 10 * 1000,
 
-	maxCallLevel: 100,
-	heartbeatInterval: 5,
-	heartbeatTimeout: 15,
+  maxCallLevel: 100,
+  heartbeatInterval: 5,
+  heartbeatTimeout: 15,
 
-	tracking: {
-		enabled: false,
-		shutdownTimeout: 5000,
-	},
+  tracking: {
+    enabled: false,
+    shutdownTimeout: 5000,
+  },
 
-	disableBalancer: false,
+  disableBalancer: false,
 
-	registry: {
-		strategy: "RoundRobin",
-		preferLocal: true
-	},
+  registry: {
+    strategy: "RoundRobin",
+    preferLocal: true,
+  },
 
-	bulkhead: {
-		enabled: false,
-		concurrency: 10,
-		maxQueueSize: 100,
-	},
+  bulkhead: {
+    enabled: false,
+    concurrency: 10,
+    maxQueueSize: 100,
+  },
 
-	validation: true,
+  validation: true,
 
-	metrics: false,
-	metricsRate: 1,
+  metrics: true,
+  metricsRate: 1,
 
-	internalServices: true,
-	internalMiddlewares: true,
+  internalServices: true,
+  internalMiddlewares: true,
 
-	hotReload: false,
+  hotReload: false,
 
-	// Register custom middlewares
-	middlewares: [],
+  // Register custom middlewares
+  middlewares: [],
 
-	// Called after broker created.
-	created(broker: ServiceBroker) {
-		
-	},
+  // Called after broker created.
+  created(broker: ServiceBroker) {},
 
-	// Called after broker starte.
-	started(broker: ServiceBroker) {
+  // Called after broker starte.
+  started(broker: ServiceBroker) {},
 
-	},
-
-	// Called after broker stopped.
-	stopped(broker: ServiceBroker) {
-
-	},
-
+  // Called after broker stopped.
+  stopped(broker: ServiceBroker) {},
 };
 
 export = brokerConfig;
