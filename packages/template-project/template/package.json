@@ -1,0 +1,68 @@
+{
+  "name": "{{projectName}}",
+  "version": "1.0.0",
+  "description": "My Moleculer microservices project",
+  "scripts": {
+    "build": "tsc",
+    "dev": "ts-node ../../node_modules/moleculer/bin/moleculer-runner.js --hot --repl --config moleculer.config.ts services/**/*.service.ts",
+    "cli": "moleculer connect {{transporter}}",
+    "start": "moleculer-runner services"{{#jest}},
+    "ci": "jest --watch",
+    "test": "jest --coverage"{{/jest}}{{#lint}},
+    "lint": "tslint -p tsconfig.json"{{/lint}}{{#docker}},
+    "dc:up": "docker-compose up --build -d",
+    "dc:down": "docker-compose down"{{/docker}}
+  },
+  "keywords": [
+    "microservices",
+    "moleculer"
+  ],
+  "author": "",
+  "devDependencies": {
+    "@types/bluebird": "^3.5.27",
+    "@types/moleculer": "1.0.0",
+    "@types/node": "^12.7.8",{{#lint}}
+    "tslint": "^5.20.0",{{/lint}}{{#jest}}
+    "@types/jest": "^24.0.18",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
+    "ts-jest": "^24.1.0",{{/jest}}
+    "moleculer-repl": "^0.6.1",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.2.2"
+  },
+  "dependencies": { {{#apiGW}}
+    "moleculer-web": "^0.8.5",{{/apiGW}}{{#if_eq transporter "NATS"}}
+    "nats": "^1.3.2",{{/if_eq}}{{#if_eq transporter "MQTT"}}
+    "mqtt": "^2.18.8",{{/if_eq}}{{#if_eq transporter "AMQP"}}
+    "amqplib": "^0.5.3",{{/if_eq}}{{#if_eq transporter "STAN"}}
+    "node-nats-streaming": "0.0.51",{{/if_eq}}{{#if_eq transporter "Kafka"}}
+    "kafka-node": "3.0.1",{{/if_eq}}{{#redis}}
+    "ioredis": "^4.2.0",{{/redis}}
+    "moleculer": "^0.14.0-beta4",
+    "moleculer-service-decorators": "^1.0.4"
+  },
+  "engines": {
+    "node": ">= 8.x.x"
+  }{{#jest}},
+  "jest": {
+    "coverageDirectory": "<rootDir>/coverage",
+    "testEnvironment": "node",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "ts-jest"
+    },
+    "testMatch": [
+      "**/*.spec.(ts|js)"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tsconfig.json"
+      }
+    }
+  }{{/jest}}
+}

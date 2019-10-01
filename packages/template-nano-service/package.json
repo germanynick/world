@@ -1,5 +1,5 @@
 {
-  "name": "nano-service-template",
+  "name": "template-nano-service",
   "version": "1.0.0",
   "description": "Minimal project template for one microservice with typescript.",
   "main": "meta.js",
@@ -8,5 +8,5 @@
   },
   "keywords": [],
   "author": "MoleculerJS",
-  "license": "MIT",
+  "license": "MIT"
 }

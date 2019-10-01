@@ -5,10 +5,22 @@
   "scripts": {
     "build": "tsc",
     "dev": "ts-node ../../node_modules/moleculer/bin/moleculer-runner.js --env --hot --repl --config moleculer.config.ts service.ts",
-    "start": "moleculer-runner --config dist/moleculer.config.js dist/service.js"{{#jest}},
+    "start": "moleculer-runner --config dist/moleculer.config.js dist/service.js"{
+      {#jest
+      }
+    },
     "ci": "jest --watch",
-    "test": "jest --coverage"{{/jest}}{{#lint}},
-    "lint": "tslint -p tsconfig.json"{{/lint}},
+    "test": "jest --coverage"{
+      {/jest
+      }
+    }{
+      {#lint
+      }
+    },
+    "lint": "tslint -p tsconfig.json"{
+      {/lint
+      }
+    },
     "docgen": "node ../../node_modules/moleculer-docgen dist/service.js",
     "prepublishOnly": "yarn build && yarn docgen"
   },
@@ -22,49 +34,107 @@
   ],
   "author": "",
   "devDependencies": {
-    "@types/bluebird": "^3.5.23",
-    "@types/node": "^10.9.2",
-    {{#lint}}
-    "tslint": "^5.11.0",
-    {{/lint}}
-    {{#jest}}
-    "@types/jest": "^23.1.1",
-    "jest": "^23.3.0",
-    "jest-cli": "^23.3.0",
-    "ts-jest": "^23.1.4",
-    {{/jest}}
-    "moleculer-repl": "^0.5.0",
-    "ts-node": "^7.0.1",
-    "typescript": "^3.0.1"
+    "@types/bluebird": "^3.5.27",
+    "@types/node": "^12.7.8",
+    {
+      {#lint
+      }
+    }
+    "tslint": "^5.20.0",
+    {
+      {/lint
+      }
+    }
+    {
+      {#jest
+      }
+    }
+    "@types/jest": "^24.0.18",
+    "jest": "^24.9.0",
+    "jest-cli": "^24.9.0",
+    "ts-jest": "^24.1.0",
+    {
+      {/jest
+      }
+    }
+    "moleculer-repl": "^0.6.1",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3"
+    "moleculer-docgen": "^0.2.1"
   },
   "dependencies": {
-    {{#apiGW}}
-    "moleculer-web": "^0.8.0",
-    {{/apiGW}}
-    {{#if_eq transporter "NATS"}}
-    "nats": "^1.0.0",
-    {{/if_eq}}
-    {{#if_eq transporter "MQTT"}}
+    {
+      {#apiGW
+      }
+    }
+    "moleculer-web": "^0.8.5",
+    {
+      {/apiGW
+      }
+    }
+    {
+      {#if_eq transporter "NATS"
+      }
+    }
+    "nats": "^1.3.2"
+    {
+      {/if_eq
+      }
+    }
+    {
+      {#if_eq transporter "MQTT"
+      }
+    }
     "mqtt": "^2.18.2",
-    {{/if_eq}}
-    {{#if_eq transporter "AMQP"}}
+    {
+      {/if_eq
+      }
+    }
+    {
+      {#if_eq transporter "AMQP"
+      }
+    }
     "amqplib": "^0.5.2",
-    {{/if_eq}}    
-    {{#if_eq transporter "STAN"}}
+    {
+      {/if_eq
+      }
+    }    
+    {
+      {#if_eq transporter "STAN"
+      }
+    }
     "node-nats-streaming": "0.0.40",
-    {{/if_eq}}    
-    {{#if_eq transporter "Kafka"}}
+    {
+      {/if_eq
+      }
+    }    
+    {
+      {#if_eq transporter "Kafka"
+      }
+    }
     "kafka-node": "2.6.1",
-    {{/if_eq}}    
-    {{#redis}}
+    {
+      {/if_eq
+      }
+    }    
+    {
+      {#redis
+      }
+    }
     "ioredis": "^3.2.2",
-    {{/redis}}
-    "moleculer": "^0.13.0",
+    {
+      {/redis
+      }
+    }
+    "moleculer": "^0.14.0-beta4",
     "moleculer-service-decorators": "^1.0.4"
   },
   "engines": {
     "node": ">= 8.x.x"
-  }{{#jest}},
+  }{
+    {#jest
+    }
+  },
   "jest": {
     "coverageDirectory": "<rootDir>/coverage",
     "testEnvironment": "node",
@@ -84,5 +154,8 @@
         "tsConfig": "tsconfig.json"
       }
     }
-  }{{/jest}}
+  }{
+    {/jest
+    }
+  }
 }
