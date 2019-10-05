@@ -2,5 +2,6 @@
   "name": "@types/moleculer",
   "version": "0.0.1",
   "main": "index.js",
-  "types": "index"
+  "types": "index",
+  "license": "MIT"
 }
