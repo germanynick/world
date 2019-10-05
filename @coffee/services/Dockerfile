@@ -6,11 +6,11 @@ WORKDIR /app
 
 COPY package*.json ./
 
-RUN yarn ci 
+RUN yarn install 
 
 COPY . .
 
 RUN yarn run build
 
 ENV NODE_ENV=production
-CMD ["npm", "start"]
+CMD ["yarn", "start"]

@@ -1,0 +1,6 @@
+#create resource group
+az group create --name SmartHomeGroup --location "South Central US"
+
+#create resource plan
+az appservice plan create --name SmartHomePlan --resource-group SmartHomeGroup --sku S1 --is-linux
+az webapp create --resource-group SmartHomeGroup --plan SmartHomePlan --name SmartHomeWeb --multicontainer-config-type compose --multicontainer-config-file docker-compose.yml

@@ -1,11 +1,10 @@
 version: "3.0"
 
 services:
-
   api:
     build:
       context: .
-    image: @coffee/services
+    image: coffee/services
     env_file: docker-compose.env
     environment:
       SERVICES: api
@@ -15,7 +14,7 @@ services:
     depends_on:
       - nats
     labels:
-      - "traefik.enable=true"   
+      - "traefik.enable=true"
       - "traefik.backend=api"
       - "traefik.port=3000"
       - "traefik.frontend.entryPoints=http"
@@ -24,7 +23,7 @@ services:
   greeter:
     build:
       context: .
-    image: @coffee/services
+    image: coffee/services
     env_file: docker-compose.env
     environment:
       SERVICES: greeter
@@ -32,7 +31,6 @@ services:
       - nats
     depends_on:
       - nats
-
 
   nats:
     image: nats
