@@ -12,6 +12,14 @@ export const mutations: MutationTree<IAppState> = {
 
 export const actions: ActionTree<IAppState, any> = {
   async nuxtServerInit({ commit }) {
-    commit('setToken', 'Duc')
+    try {
+      
+      const data = await this.$axios.$get('/greeter/hello')
+      console.log(data)
+    } catch (error) {
+      console.log(error)
+    }
+
+    commit('setToken', 'token')
   }
 }

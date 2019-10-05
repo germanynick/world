@@ -16,7 +16,6 @@ export default {
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
-  serverMiddleware: [{ path: '/api', handler: '~/server/api.middleware.ts' }],
   /*
    ** Customize the progress-bar color
    */
@@ -39,14 +38,40 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/pwa'
+    '@nuxtjs/pwa',
+    // Doc: https://auth.nuxtjs.org/
+    '@nuxtjs/auth'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {
-    prefix: '/api'
+    host: 'localhost',
+    prefix: '/api',
+    port: 3001
+  },
+  /*
+   ** Auth module configuration
+   ** See https://auth.nuxtjs.org/
+   */
+  router: {
+    middleware: ['auth']
+  },
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: {
+            url: '/api/user/login',
+            method: 'post',
+            propertyName: 'token'
+          },
+          logout: { url: '/api/user/logout', method: 'post' },
+          user: { url: '/api/user/me', method: 'get', propertyName: 'user' }
+        }
+      }
+    }
   },
   /*
    ** Build configuration
