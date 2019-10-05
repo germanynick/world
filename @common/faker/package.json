@@ -1,6 +1,6 @@
 {
   "name": "@common/faker",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "My Moleculer microservice",
   "scripts": {
     "build": "tsc",
@@ -22,16 +22,16 @@
   "devDependencies": {
     "@types/bluebird": "^3.5.27",
     "@types/node": "^12.7.8",
-    "tslint": "^5.20.0",
     "moleculer-repl": "^0.6.1",
     "ts-node": "^8.4.1",
+    "tslint": "^5.20.0",
     "typescript": "^3.6.3"
   },
   "dependencies": {
-    "nats": "^1.3.2",
     "moleculer": "^0.14.0-beta4",
     "moleculer-fake": "1.0.14",
-    "moleculer-service-decorators": "^1.0.4"
+    "moleculer-service-decorators": "^1.0.4",
+    "nats": "^1.3.2"
   },
   "engines": {
     "node": ">= 8.x.x"
