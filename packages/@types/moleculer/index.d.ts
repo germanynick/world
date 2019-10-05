@@ -263,7 +263,7 @@ declare module "moleculer" {
     [name: string]: any;
   }
 
-  type  CheckRetryable = <T extends Error>(err: T) => boolean;
+  type CheckRetryable = <T extends Errors.MoleculerError>(err: T) => boolean;
 
   interface BrokerCircuitBreakerOptions {
     enabled?: boolean;
