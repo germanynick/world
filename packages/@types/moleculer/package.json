@@ -1,8 +1,9 @@
 {
   "name": "@types/moleculer",
   "version": "0.0.2-alpha.1",
-  "description": "Moleculer",
+  "description": "Moleculer Declaration",
   "main": "index.js",
   "types": "index",
-  "license": "MIT"
+  "license": "MIT",
+  "gitHead": "14595502dd6e40ffe60494ebf8ac87172d3fa09e"
 }
