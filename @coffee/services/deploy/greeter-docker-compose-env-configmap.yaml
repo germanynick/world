@@ -1,0 +1,13 @@
+apiVersion: v1
+data:
+  LOGGER: "true"
+  LOGLEVEL: info
+  NAMESPACE: ""
+  SERVICEDIR: services
+  TRANSPORTER: nats://nats:4222
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  labels:
+    io.kompose.service: greeter-docker-compose-env
+  name: greeter-docker-compose-env

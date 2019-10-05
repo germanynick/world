@@ -2,6 +2,7 @@
   "name": "@coffee/services",
   "version": "0.0.2-alpha.4",
   "description": "My Moleculer microservices project",
+  "license": "MIT",
   "scripts": {
     "build": "tsc",
     "dev": "ts-node ../../node_modules/moleculer/bin/moleculer-runner.js --hot --repl --config moleculer.config.ts services/**/*.service.ts",

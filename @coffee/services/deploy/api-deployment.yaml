@@ -1,0 +1,60 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f docker-compose.yml
+    kompose.version: 1.17.0 ()
+    traefik.backend: api
+    traefik.enable: "true"
+    traefik.frontend.entryPoints: http
+    traefik.frontend.rule: PathPrefix:/
+    traefik.port: "3000"
+  creationTimestamp: null
+  labels:
+    io.kompose.service: api
+  name: api
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        io.kompose.service: api
+    spec:
+      containers:
+      - env:
+        - name: LOGGER
+          valueFrom:
+            configMapKeyRef:
+              key: LOGGER
+              name: api-docker-compose-env
+        - name: LOGLEVEL
+          valueFrom:
+            configMapKeyRef:
+              key: LOGLEVEL
+              name: api-docker-compose-env
+        - name: NAMESPACE
+          valueFrom:
+            configMapKeyRef:
+              key: NAMESPACE
+              name: api-docker-compose-env
+        - name: PORT
+          value: "3000"
+        - name: SERVICEDIR
+          valueFrom:
+            configMapKeyRef:
+              key: SERVICEDIR
+              name: api-docker-compose-env
+        - name: SERVICES
+          value: api
+        - name: TRANSPORTER
+          valueFrom:
+            configMapKeyRef:
+              key: TRANSPORTER
+              name: api-docker-compose-env
+        image: coffee/services
+        name: api
+        resources: {}
+      restartPolicy: Always
+status: {}
