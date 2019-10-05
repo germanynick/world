@@ -3,6 +3,7 @@ FROM node:10-alpine
 RUN mkdir /app
 WORKDIR /app
 
+RUN  yarn config set registry https://verdaccioweb.azurewebsites.net
 
 COPY package*.json ./
 
