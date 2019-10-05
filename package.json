@@ -8,15 +8,16 @@
     "ci": "lerna run ci --stream --scope",
     "docgen": "lerna run docgen --stream --scope",
     "alias:nano": "moleculer alias-template nano-service ./packages/template-nano-service",
-    "alias:project": "moleculer alias-template project ./packages/template-project",
+    "alias:services": "moleculer alias-template services ./packages/template-project",
     "init:nano": "moleculer init nano-service",
-    "init:project": "moleculer init project"
+    "init:services": "moleculer init services",
+    "init:web": "yarn create nuxt-app"
   },
   "workspaces": [
     "packages/@types/*",
     "@*/*"
   ],
   "devDependencies": {
-    "lerna": "^3.13.2"
+    "lerna": "^3.16.4"
   }
 }
