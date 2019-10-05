@@ -1,6 +1,6 @@
 {
   "name": "@coffee/services",
-  "version": "0.0.1",
+  "version": "0.0.2-alpha.0",
   "description": "My Moleculer microservices project",
   "scripts": {
     "build": "tsc",
@@ -21,7 +21,7 @@
   "devDependencies": {
     "@types/bluebird": "^3.5.27",
     "@types/jest": "^24.0.18",
-    "@types/moleculer": "^0.0.1",
+    "@types/moleculer": "^0.0.2-alpha.0",
     "@types/node": "^12.7.8",
     "jest": "^24.9.0",
     "jest-cli": "^24.9.0",
