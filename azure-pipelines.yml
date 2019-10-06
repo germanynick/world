@@ -1,4 +1,13 @@
 # Starter pipeline
+- task: DockerCompose@0
+  inputs:
+    containerregistrytype: 'Azure Container Registry'
+    azureSubscription: 'Visual Studio Enterprise (b85857dd-809b-4ad4-ba2f-3114f5387b63)'
+    azureContainerRegistry: '{"loginServer":"coffeeacr.azurecr.io", "id" : "/subscriptions/b85857dd-809b-4ad4-ba2f-3114f5387b63/resourceGroups/KubernetesGroup/providers/Microsoft.ContainerRegistry/registries/coffeeacr"}'
+    dockerComposeFile: '**/docker-compose.yml'
+    additionalDockerComposeFiles: '**/docker-compose.env'
+    action: 'Run a Docker Compose command'
+    dockerComposeCommand: 'docker-compose up'
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
