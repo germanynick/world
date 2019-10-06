@@ -1,28 +1,7 @@
-# Starter pipeline
-- task: HelmDeploy@0
+- task: DockerCompose@0
   inputs:
-    connectionType: 'Azure Resource Manager'
+    containerregistrytype: 'Azure Container Registry'
     azureSubscription: 'Visual Studio Enterprise (b85857dd-809b-4ad4-ba2f-3114f5387b63)'
-    azureResourceGroup: 'KubernetesGroup'
-    kubernetesCluster: 'Kubernetes'
-    useClusterAdmin: true
-    namespace: 'coffee'
-    command: 'ls'
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
-trigger:
-- master
-
-pool:
-  vmImage: 'ubuntu-latest'
-
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    azureContainerRegistry: '{"loginServer":"coffeeacr.azurecr.io", "id" : "/subscriptions/b85857dd-809b-4ad4-ba2f-3114f5387b63/resourceGroups/KubernetesGroup/providers/Microsoft.ContainerRegistry/registries/coffeeacr"}'
+    dockerComposeFile: '**/docker-compose.yml'
+    action: 'Run a Docker Compose command'
