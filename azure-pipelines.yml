@@ -3,5 +3,5 @@
     containerregistrytype: 'Azure Container Registry'
     azureSubscription: 'Visual Studio Enterprise (b85857dd-809b-4ad4-ba2f-3114f5387b63)'
     azureContainerRegistry: '{"loginServer":"coffeeacr.azurecr.io", "id" : "/subscriptions/b85857dd-809b-4ad4-ba2f-3114f5387b63/resourceGroups/KubernetesGroup/providers/Microsoft.ContainerRegistry/registries/coffeeacr"}'
-    dockerComposeFile: '**/docker-compose.yml'
+    dockerComposeFile: '@coffee/services/docker-compose.yml'
     action: 'Run a Docker Compose command'
