@@ -6,7 +6,10 @@
     "module": "commonjs",
     "moduleResolution": "node",
     "pretty": true,
-    "types": ["node", "moleculer"],
+    "types": [
+      "node",
+      "moleculer"
+    ],
     "declaration": true,
     "sourceMap": false,
     "target": "es6",
@@ -15,5 +18,9 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true
   },
-  "exclude": ["node_modules", "test", "dist"]
+  "exclude": [
+    "node_modules",
+    "test",
+    "dist"
+  ]
 }

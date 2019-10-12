@@ -10,7 +10,8 @@
       {{#jest}}
       "jest",
       {{/jest}}
-      "node"
+      "node",
+      "moleculer"
     ],
     "declaration": true,
     "sourceMap": false,

@@ -863,10 +863,7 @@ declare module "moleculer" {
       public data: any;
       public retryable: boolean;
 
-      constructor(message: string, code: number, type: string, data: any);
-      constructor(message: string, code: number, type: string);
-      constructor(message: string, code: number);
-      constructor(message: string);
+      constructor(message?: string, code?: number, type?: string, data?:any);
     }
     class MoleculerRetryableError extends MoleculerError {}
     class MoleculerServerError extends MoleculerRetryableError {}
